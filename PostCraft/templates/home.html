@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Welcome To PostCraft</h1>
+      <p>Create, read, update, and delete your blog posts effortlessly with PostCraft.</p>
+      <p>Enjoy a secure and user-friendly platform built with Flask, MySQL, and Bootstrap.</p>
+      <p class="font-italic">Start blogging today!</p>
+    <!-- <p class="lead">This application is built on the Python Flask framework.</p> -->
+    {% if session.logged_in == NULL %}
+      <a href="/register" class="btn btn-primary btn-lg">Register</a>
+      <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% else %}
+    <!-- <p class="lead">This application is built on the Python Flask framework.</p>	 -->
+    <a href="/posts" class="btn btn-primary btn-lg">CLick Here To View Posts</a>
+    {% endif %}
+  </div>
+{% endblock %}
